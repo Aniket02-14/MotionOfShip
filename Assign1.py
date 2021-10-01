@@ -36,10 +36,15 @@ for i in range(0,len(df)):
     roll.append(phi)
 
 #plotting curve which shows motion of ship(yaw,roll and pitch) with time.
-plt.plot(t, yaw, label = "YAW")
-plt.plot(t, pitch, label = "PITCH")
-plt.plot(t, roll, label = "ROLL")
-plt.xlabel("time")
-plt.legend()
-plt.title("Different Motion of Ship.")
+figure, axis = plt.subplots(3)
+
+axis[0].plot(t, yaw)
+axis[0].set_title("YAW")
+
+axis[1].plot(t, pitch)
+axis[1].set_title("PITCH")
+
+axis[2].plot(t, roll)
+axis[2].set_title("ROLL")
+
 plt.show()
